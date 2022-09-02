@@ -6,6 +6,20 @@ public class MEquation {
 	char opCode;
 	double result;
 	
+	public MEquation() {}
+	
+	
+	public MEquation(char opCode) {
+		this.opCode=opCode;
+	}
+	
+	public MEquation(char opCode, double leftVal, double rightVal) {
+		this(opCode);
+		this.leftVal=leftVal;
+		this.rightVal=rightVal;
+	}
+	
+	
 	
 	void execute() {
 		switch (opCode) {
