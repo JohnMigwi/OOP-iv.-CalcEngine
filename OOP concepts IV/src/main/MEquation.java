@@ -1,13 +1,18 @@
 package main;
 
 public class MEquation {
-	double leftVal;
-	double rightVal;
+	private double leftVal;
+	private double rightVal;
 	char opCode;
-	double result;
+	private double result;
+	
+	private static int numberOfCalculations;
+	private static int sumOfResults;
+	
+	
+	
 	
 	public MEquation() {}
-	
 	
 	public MEquation(char opCode) {
 		this.opCode=opCode;
@@ -18,6 +23,22 @@ public class MEquation {
 		this.leftVal=leftVal;
 		this.rightVal=rightVal;
 	}
+	
+	
+	//Accessors and mutators
+	public double getLeftVal() {return leftVal;}
+	public void setLeftVal(double leftVal) {this.leftVal=leftVal;}
+	
+	public double getReftVal() {return rightVal;}
+	public void setRightVal(double rightVal) {this.rightVal=rightVal;}
+	
+	public double getResult() {return result;}
+	public void setresult(double reuslt) {this.result=result;}
+	
+	
+	
+	
+	
 	
 	
 	
@@ -41,6 +62,18 @@ public class MEquation {
 			result=0.0d;
 			break;
 		}
+		
+		numberOfCalculations++;
+		sumOfResults +=result;
+	}
+	public void execute(double leftVal, double rightVal) {
+		this.leftVal=leftVal;
+		this.rightVal=rightVal;
+		
+		execute();
 	}
 	
+	public static double getAverageResult() {
+		return sumOfResults/ numberOfCalculations;
+	}
 }
